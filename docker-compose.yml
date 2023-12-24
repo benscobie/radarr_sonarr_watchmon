@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  radarr-sonarr-watchmon:
+    image: benscobie/radarr-sonarr-watchmon:master
+    restart: always
+    volumes:
+      - type: bind
+        source: /path/to/config.yml
+        target: /config.yml
+      - type: bind
+        source: /path/to/.auth.pkl
+        target: /.auth.pkl
+        
+    # environment:'
+    #   CRON: '5 * * * *'
